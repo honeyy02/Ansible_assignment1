@@ -5,7 +5,7 @@
   tasks:
   - name: Copy Jar to S3 Bucket
     command: >
-        aws s3 cp ./my-app-1.0-SNAPSHOT.jar s3://jarbucket2402/my-app-1.0-SNAPSHOT.jar
+        aws s3 cp ./my-app-1.0-SNAPSHOT1.jar s3://jarbucket2402/my-app-1.0-SNAPSHOT1.jar
         --region us-east-1
     register: s3_upload
 
@@ -24,8 +24,8 @@
 
   - name: Copy file to git repo
     copy:
-      src: './my-app-1.0-SNAPSHOT.jar'
-      dest: './Ansible_assignment/my-app-1.0-SNAPSHOT.jar'
+      src: './my-app-1.0-SNAPSHOT1.jar'
+      dest: './Ansible_assignment/my-app-1.0-SNAPSHOT1.jar'
 
   - name: Add file to git
     command:
@@ -34,7 +34,7 @@
 
   - name: Commit the changes
     command:
-        cmd: git commit -m "Added JAR file"
+        cmd: git commit -m "Added JAR file by Jenkins pipeline"
         chdir: './Ansible_assignment' 
   - name: Push the changes to the remote repository
     command:
