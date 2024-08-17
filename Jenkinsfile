@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Clone the repository containing the Ansible playbook and JAR file
-                git branch: 'main', url: 'git@github.com:honeyy02/Ansible_assignment1.git'
+              checkout scm
             }
         }
       
