@@ -47,9 +47,7 @@
         cmd: git commit -m "Added JAR file by Jenkins pipeline"
         chdir: './Ansible_assignment' 
   - name: Push the changes to the remote repository
-    command:
-        cmd: git push origin main
-        chdir: './Ansible_assignment'  
-        environment: 
-          GIT_USERNAME: {{ lookup ('env', 'GIT_USERNAME') }}
-          GIT_TOKEN: {{ lookup('env', 'GIT_TOKEN') }}
+    shell: |
+      git push https://{{ lookup('env', 'GIT_USERNAME') }}:{{ lookup('env', 'GIT_TOKEN') }}@github.com/honeyy02/Ansible_assignment.git main
+    args:
+        chdir: './Ansible_assignment'
