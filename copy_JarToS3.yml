@@ -50,3 +50,6 @@
     command:
         cmd: git push origin main
         chdir: './Ansible_assignment'  
+        environment: 
+          GIT_USERNAME: {{ lookup ('env', 'GIT_USERNAME') }}
+          GIT_TOKEN: {{ lookup('env', 'GIT_TOKEN') }}
