@@ -29,7 +29,7 @@
 
   - name: Add file to git
     command:
-      cmd: git add my-app-1.0-SNAPSHOT.jar
+      cmd: git add my-app-1.0-SNAPSHOT1.jar
       chdir: './Ansible_assignment'
 
   - name: Commit the changes
