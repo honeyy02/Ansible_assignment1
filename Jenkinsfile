@@ -21,7 +21,7 @@ pipeline {
       
         stage('Run Ansible Playbook') {
             steps {
-                withCrendtials([[usernamePassword(credentialsId:'git',usernameVariable:'GIT_USERNAME',passwordVariable:'GIT_TOKEN')]]){
+                withCrendtials([usernamePassword(credentialsId:'git',usernameVariable:'GIT_USERNAME',passwordVariable:'GIT_TOKEN')]){
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws_credentials']]) {
                 // Run your Ansible playbook
                 sh '''
