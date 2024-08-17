@@ -12,6 +12,12 @@ pipeline {
               checkout scm
             }
         }
+        stage('Check Ansible and AWS version'){
+            steps{
+                sh 'ansible --version'
+                sh 'aws --version'
+            }
+        }
       
         stage('Run Ansible Playbook') {
             steps {
