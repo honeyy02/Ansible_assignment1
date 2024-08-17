@@ -24,12 +24,12 @@
       
   - name: Set up Git user details
     command: git config user.name "honeyy02"
-      args:
+    args:
         chdir: './Ansible_assignment'
 
   - name: Set up Git email
     command: git config user.email "honeysharma20095@acropolis.in"
-      args:
+    args:
         chdir: './Ansible_assignment'
 
   - name: Copy file to git repo
