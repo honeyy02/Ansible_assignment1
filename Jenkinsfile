@@ -23,7 +23,7 @@ pipeline {
             steps {
                 // Run your Ansible playbook
                 sh '''
-                ansible-playbook -i localhost, copy_JarToS3.yml
+                ansible-playbook copy_JarToS3.yml
                 '''
             }
         }
