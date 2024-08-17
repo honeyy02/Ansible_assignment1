@@ -21,10 +21,12 @@ pipeline {
       
         stage('Run Ansible Playbook') {
             steps {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws_credentials']]) {
                 // Run your Ansible playbook
                 sh '''
                 ansible-playbook copy_JarToS3.yml
                 '''
+                }    
             }
         }
     }
