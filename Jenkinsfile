@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ANSIBLE_HOME = '/home/codespace/.python/current'
+        PATH = "/home/codespace/.python/current/bin:$PATH"
         AWS_DEFAULT_REGION = 'us-east-1'
     }
 
