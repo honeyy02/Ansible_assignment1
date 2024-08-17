@@ -16,7 +16,7 @@
 
   - name: clone the repo
     git:
-      repo: 'git@github.com:honeyy02/Ansible_assignment1.git'
+      repo: 'git@github.com:honeyy02/Ansible_assignment.git'
       dest: './Ansible_assignment'
       version: main
       force: yes
